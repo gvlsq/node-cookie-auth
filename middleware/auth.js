@@ -9,9 +9,8 @@ exports.ensureActive = actionBase(function(req, res, next) {
       req.session.destroy(function(err) {
         if (err) throw err;
 
-        // Could this not redirect to /login with an error message about how the
-        // session expired?
-        res.unauthorized("Session expired");
+        req.flash("errorMessage", "Session expired");
+        res.redirect("/login");
       });
     } else {
       next();
