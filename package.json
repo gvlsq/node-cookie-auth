@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server",
-    "start": "NODE_ENV=production node server"
+    "dev": "node ./scripts/init-db && nodemon server"
   },
   "author": "",
   "license": "ISC",

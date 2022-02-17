@@ -4,7 +4,7 @@ const session = require("express-session");
 const sqlite3 = require("sqlite3").verbose();
 const SQLiteStore = require("connect-sqlite3")(session);
 
-const DATABASE_PATH = path.resolve(__dirname, process.env.DATABASE_FILENAME || "default.db");
+const DATABASE_PATH = path.resolve(__dirname, "..", process.env.DATABASE_FILENAME || "default.db");
 
 let db;
 
