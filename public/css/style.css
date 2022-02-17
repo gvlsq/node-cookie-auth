@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+html {
+  --primary-font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  width: 100vw;
+  /* @TODO: Replace this with min-height to support scrolling? */
+  height: 100vh;
+
+  background-color: #181818;
+  color: white;
+  font-family: var(--primary-font-family);
+}
+
+/*
+** Hyperlinks
+*/
+
+a {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/*
+** Forms
+*/
+
+/*
+  @TODO: What is confusing me the most is knowing how much to couple element
+  styling with class styling. Why can I get away with styling .form-container
+  but not any of the elements in it? Is this okay?
+*/
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 20%;
+}
+
+.form-container a {
+  font-size: 1.06rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+  margin-top: 20px;
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  
+  margin-bottom: 22px;
+  padding: 9px;
+
+  border: 1px #888888 solid;
+  outline-style: none;
+ 
+  background-color: transparent;
+  color: white;
+ 
+  font-family: var(--primary-font-family);
+  font-size: 1.02rem;
+}
+
+form input:focus {
+  border-color: white;
+}
+
+form input[type="submit"] {
+  align-self: flex-end;
+
+  width: 50%;
+  
+  margin-top: 7px;
+  padding: 10px 6px;
+
+  border-radius: 0.8rem;
+  border-style: none;
+
+  background-color: #ff1493;
+  color: white;
+  
+  font-size: 1.06rem;
+  text-transform: uppercase;
+}
+
+form input[type="submit"]:hover {
+  background-color: #e00079;
+  cursor: pointer;
+}
+
+form label {
+  align-self: flex-start;
+  font-size: 1.02rem;
+  margin-bottom: 2px;
+}
+
+/*
+**  Flashes
+**/
+
+.success-message {
+  color: #1eff14;
+  font-size: 1rem;
+  text-align: center;  
+}
+
+.error-message {
+  color: #ff141e;
+  font-size: 1rem;
+  margin-top: 16px;
+  text-align: center;
+}

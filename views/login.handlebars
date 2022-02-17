@@ -1,0 +1,14 @@
+<div class="form-container">
+  <h1>Log in to your account</h1>
+  {{#if errorMessage}}<h2 class="error-message">{{errorMessage}}</h2>{{/if}}
+  <form method="POST" action="/login">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input type="submit" value="Log In">
+  </form>
+  <a href="/register">Need an account?</a>
+</div>
