@@ -19,7 +19,6 @@ exports.initDatabase = function(callback) {
 exports.createSessionStore = function() {
   return new SQLiteStore({
     db: path.relative("./", DATABASE_PATH), // connect-sqlite3 has quirks related to how it handles paths
-    mode: sqlite3.OPEN_READWRITE,
     table: "SESSION",
   });  
 }
