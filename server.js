@@ -41,10 +41,12 @@ app.use(flash());
 app.use(express.urlencoded({
   extended: true
 }));
-morganBody(app, {
-  timezone: "Etc/UTC",
-  logAllReqHeader: true
-});
+if (process.env.NODE_ENV !== "test") {
+  morganBody(app, {
+    timezone: "Etc/UTC",
+    logAllReqHeader: true
+  });
+}
 
 app.use(require("./middleware/responseHelpers"));
 app.use(require("./middleware/auth").ensureActive);
@@ -64,3 +66,5 @@ initDatabase((err) => {
     console.log(`Web server started listening in ${NODE_ENV} on port ${PORT}`);
   });
 });
+
+module.exports = app;
