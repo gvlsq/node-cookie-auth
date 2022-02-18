@@ -9,7 +9,13 @@ dotenv.config();
 const DATABASE_PATH = path.resolve(__dirname, "..", process.env.DATABASE_FILENAME || "default.db");
 
 try {
-  if (fs.existsSync(DATABASE_PATH)) return;
+  if (fs.existsSync(DATABASE_PATH)) {
+    if (process.env.NODE_ENV === "test") {
+      fs.unlinkSync(DATABASE_PATH)
+    } else {
+      return;
+    } 
+  }
 
   const seedDataDirectory = path.resolve(__dirname, "seed");
 

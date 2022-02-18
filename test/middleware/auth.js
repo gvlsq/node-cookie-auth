@@ -1,8 +1,6 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 
-process.env.NODE_ENV = "test";
-
 const server = require("../../server");
 
 chai.use(chaiHttp);
@@ -28,7 +26,7 @@ describe("Authenication middleware", function() {
     it("should redirect to the login page when the user is not authenticated", function(done) {
       chai.request(server)
           .get("/home")
-          .redirects(0)
+          .redirects(0) // https://github.com/chaijs/chai-http/issues/112#issuecomment-607527228
           .end((err, res) => {
             chai.expect(err).to.be.null;
             chai.expect(res).to.redirect;
