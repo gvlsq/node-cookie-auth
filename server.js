@@ -53,7 +53,8 @@ app.use(require("./middleware/auth").ensureActive);
 app.use(require("./routes/index"));
 app.use(require("./routes/auth"));
 app.use(require("./routes/register"));
-app.use(require("./middleware/exceptionHandler"));
+app.use(require("./middleware/notFound"));
+app.use(require("./middleware/internalServerError"));
 
 initDatabase((err) => {
   if (err) throw err;
