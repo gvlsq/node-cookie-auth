@@ -22,6 +22,13 @@ Subsequent requests to the web server pass through the `ensureActive` middleware
 As an aside, the ```resave``` option in express-session is set to false because connect-sqlite3 will *always* touch the session store when the request pipeline runs.
 Specifically, connect-sqlite3 updates the `SESSION.expired` column in the database during every request, so we don't need to ask it to update the `SESSION.sess` column too.
 
+## Improvements
+
+* Timing attacks
+	* Measures can be added to POST /login so that the time it takes to run does not depend on the
+	input to the API
+* Integration tests
+
 ## License
 
 See the [LICENSE](https://github.com/gvlsq/node-cookie-auth/blob/main/LICENSE) file.
