@@ -5,9 +5,9 @@ const server = require("../../server");
 
 chai.use(chaiHttp);
 
-describe("Timeout middleware", function() {
+describe("Authenication middleware", function() {
   describe("ensureActive", function() {
-    it("should not redirect users who do not have cookies", function(done) {
+    it("should not redirect when the user does not have a cookie", function(done) {
       chai.request(server)
           .get("/")
           .end((err, res) => {
@@ -19,9 +19,7 @@ describe("Timeout middleware", function() {
           });
     });
   });
-});
 
-describe("Authenication middleware", function() {
   describe("ensureAuth", function() {
     it("should redirect to the login page when the user is not authenticated", function(done) {
       chai.request(server)

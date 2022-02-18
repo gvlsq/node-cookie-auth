@@ -12,7 +12,19 @@ exports.initDatabase = function(callback) {
   if (db) throw new Error("Database is already initialized");
 
   db = new sqlite3.Database(DATABASE_PATH, function(err) {
-    callback(err);
+    if (process.env.NODE_ENV !== "test" || err) {
+      callback(err);
+    } else {
+      const username = process.env.DATABASE_TEST_USERNAME;
+      const emailAddress = process.env.DATABASE_TEST_EMAIL_ADDRESS;
+      const password = process.env.DATABASE_TEST_PASSWORD_HASHED;
+      db.run(`INSERT INTO
+                 USER (USERNAME, EMAIL_ADDRESS, PASSWORD)
+               VALUES
+                 (?, ?, ?);`, [username, emailAddress, password], function(err) {
+        callback(err);
+      });
+    }
   });
 }
 
