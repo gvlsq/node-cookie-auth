@@ -64,6 +64,8 @@ initDatabase((err) => {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, function() {
     console.log(`Web server started listening in ${NODE_ENV} on port ${PORT}`);
+
+    app.emit("ready");
   });
 });
 

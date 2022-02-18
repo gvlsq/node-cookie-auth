@@ -5,6 +5,13 @@ const server = require("../../server");
 
 chai.use(chaiHttp);
 
+before(function(done) {
+  // https://mrvautin.com/ensure-express-app-started-before-tests/
+  server.on("ready", function() {
+    done();
+  });
+});
+
 describe("Authenication middleware", function() {
   describe("ensureActive", function() {
     it("should not redirect when the user does not have a cookie", function(done) {
