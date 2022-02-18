@@ -37,7 +37,7 @@ Specifically, connect-sqlite3 updates the `SESSION.expired` column in the databa
 * Timing attacks
 	* Measures can be added to the `POST /login` endpoint so that its response time is not dependent on its input
 * CSRF
-	* The CSRF tokens can be added to all HTML forms returned by the web server to protect against CSRF attacks
+	* CSRF tokens can be added to all HTML forms returned by the web server to protect against CSRF attacks
 * Integration tests
 
 ## License
