@@ -44,7 +44,8 @@ app.use(express.urlencoded({
 if (process.env.NODE_ENV !== "test") {
   morganBody(app, {
     timezone: "Etc/UTC",
-    logAllReqHeader: true
+    logAllReqHeader: true,
+    logResponseBody: false
   });
 }
 
