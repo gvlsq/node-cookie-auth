@@ -7,6 +7,15 @@ This web server implements cookie-based authentication in Node.js using a SQLite
 To initialize the necessary packages, navigate to the root folder of the repository on the command line and enter `npm install`.
 Then, run the project in development mode by entering `npm run dev`. This will automatically create a SQLite database named `default.db` and seed it with some tables.
 
+## Unit Testing
+
+Mocha and Chai were used to write unit tests for the middleware and routes in this project. To run
+the tests, enter `npm run test` on the command line from the root folder.
+
+Note that a test environment database named `default.test.db` will be created in the root folder every
+time you run this command. In the future, the root hooks will be added to Mocha so that this database
+is cleaned up automatically.
+
 ## Timeout Strategy
 
 As per the [OWASP recommendations for automatic session expiration](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#automatic-session-expiration), both idle timeout and absolute timeout are implemented in this sample.

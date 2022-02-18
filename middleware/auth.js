@@ -9,7 +9,6 @@ exports.ensureActive = actionBase(function(req, res, next) {
       req.session.destroy(function(err) {
         if (err) throw err;
 
-        req.flash("errorMessage", "Session expired");
         res.redirect("/login");
       });
     } else {
