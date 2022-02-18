@@ -26,7 +26,8 @@ Specifically, connect-sqlite3 updates the `SESSION.expired` column in the databa
 
 * Timing attacks
 	* Measures can be added to POST /login so that the time it takes to run does not depend on the
-	input to the API
+	input to the API, and so that measurements of the time it takes do not leak information to begin
+	with
 * Integration tests
 
 ## License
