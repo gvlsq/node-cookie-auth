@@ -2,6 +2,8 @@
 
 This web server implements cookie-based authentication in Node.js using a SQLite database.
 
+![Login page screenshot](https://github.com/gvlsq/node-cookie-auth/blob/main/screenshot.png)
+
 ## Installation
 
 To initialize the necessary packages, navigate to the root folder of the repository on the command line and enter `npm install`.
