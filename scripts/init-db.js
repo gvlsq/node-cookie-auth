@@ -10,11 +10,7 @@ const DATABASE_PATH = path.resolve(__dirname, "..", process.env.DATABASE_FILENAM
 
 try {
   if (fs.existsSync(DATABASE_PATH)) {
-    if (process.env.NODE_ENV === "test") {
-      fs.unlinkSync(DATABASE_PATH)
-    } else {
-      return;
-    } 
+    if (process.env.NODE_ENV === "test") fs.unlinkSync(DATABASE_PATH); else return;
   }
 
   const seedDataDirectory = path.resolve(__dirname, "seed");

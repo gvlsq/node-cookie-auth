@@ -41,7 +41,7 @@ router.post("/login", ensureGuest, actionBase(function(req, res, next) {
     if (err) throw err;
 
     if (!user) {
-      req.flash("errorMessage", "Incorrect email or password");
+      req.flash("errorMessage", "Incorrect username or password");
       res.redirect("/login");
       return;
     }
@@ -50,7 +50,7 @@ router.post("/login", ensureGuest, actionBase(function(req, res, next) {
       if (err) throw err;
       
       if (!same) {
-        req.flash("errorMessage", "Incorrect email or password");
+        req.flash("errorMessage", "Incorrect username or password");
         res.redirect("/login");
         return;
       }
