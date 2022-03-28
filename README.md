@@ -16,7 +16,7 @@ the tests, enter `npm run test` on the command line from the root folder.
 
 Note that a test environment database named `default.test.db` will be created in the root folder every
 time you run this command. In the future, root hooks will be added to Mocha so that this database
-is cleaned up automatically.
+is cleaned up automatically. 
 
 ## Timeout Strategy
 
@@ -34,11 +34,14 @@ Specifically, connect-sqlite3 updates the `SESSION.expired` column in the databa
 
 ## Improvements
 
-* Timing attacks
-	* Measures can be added to the `POST /login` endpoint so that its response time is not dependent on its input
-* CSRF
+* Introduce TypeScript
+	* e.g. github.com/jacobstern/typescript-handlebars-realworld/
+* Introduce integration tests
+	* e.g. GET /logout depends on a successful POST /login first, see: gist.github.com/joaoneto/5152248
+* Handle timing attacks
+	* Measures can be added to the `POST /login` endpoint so that its response time is not dependent on its input, e.g. github.com/alex996/node-auth/blob/master/api/src/routes/auth.ts#L16
+* Handle CSRF
 	* CSRF tokens can be added to all HTML forms returned by the web server to protect against CSRF attacks
-* Integration tests
 
 ## License
 
