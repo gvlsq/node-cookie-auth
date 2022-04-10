@@ -15,8 +15,7 @@ Mocha and Chai were used to write unit tests for the middleware and routes in th
 the tests, enter `npm run test` on the command line from the root folder.
 
 Note that a test environment database named `default.test.db` will be created in the root folder every
-time you run this command. In the future, root hooks will be added to Mocha so that this database
-is cleaned up automatically. 
+time you run this command. In the future, root hooks will be added to Mocha so that this database exists only when Mocha runs.
 
 ## Timeout Strategy
 
